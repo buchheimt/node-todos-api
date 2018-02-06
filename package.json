@@ -1,0 +1,22 @@
+{
+  "name": "todos-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buchheimt/node-todos-api.git"
+  },
+  "author": "Tyler Buchheim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/buchheimt/node-todos-api/issues"
+  },
+  "homepage": "https://github.com/buchheimt/node-todos-api#readme",
+  "dependencies": {
+    "mongodb": "^3.0.2"
+  }
+}
