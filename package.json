@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "test-watch": "nodemon --exec 'npm test'"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,10 @@
     "express": "^4.16.2",
     "mongodb": "^3.0.2",
     "mongoose": "^5.0.3"
+  },
+  "devDependencies": {
+    "jest": "^22.3.0",
+    "nodemon": "^1.15.0",
+    "supertest": "^3.0.0"
   }
 }

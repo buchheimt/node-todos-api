@@ -9,6 +9,8 @@ const app = express();
 
 app.use(bodyParser.json());
 
+// Routes
+
 app.post('/todos', (req, res) => {
   const todo = new Todo({
     text: req.body.text
@@ -22,7 +24,12 @@ app.post('/todos', (req, res) => {
     });  
 });
 
+// Run
 
 app.listen(3000, () => {
   console.log("Running on port 3000");
 });
+
+// Export
+
+module.exports = {app};
