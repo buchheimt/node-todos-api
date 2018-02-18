@@ -29,7 +29,7 @@ app.get('/todos', (req, res) => {
     .then(todos => {
       res.send({todos});
     }, err => {
-      res.status(400).send(err)
+      res.status(400).send(err);
     });
 });
 
