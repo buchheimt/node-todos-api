@@ -100,7 +100,7 @@ describe('Todo#show', () => {
 
   test('should return a 404 when todo is not found', done => {
     request(app)
-      .get(`/todos/${new ObjectId()}`)
+      .get(`/todos/${new ObjectId().toHexString()}`)
       .expect(404)
       .end(done);
   });

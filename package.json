@@ -12,6 +12,9 @@
     "type": "git",
     "url": "git+https://github.com/buchheimt/node-todos-api.git"
   },
+  "engines": {
+    "node": "8.9.3"
+  },
   "author": "Tyler Buchheim",
   "license": "ISC",
   "bugs": {
