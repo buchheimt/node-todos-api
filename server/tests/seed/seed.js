@@ -36,7 +36,7 @@ const usersData = [
     password: 'tylerpass',
     tokens: [{
       access: 'auth',
-      token: jwt.sign({_id: userId1, access: 'auth'}, 'supersecret').toString()
+      token: jwt.sign({_id: userId1, access: 'auth'}, process.env.JWT_SECRET).toString()
     }]
   },
   {
@@ -45,7 +45,7 @@ const usersData = [
     password: 'emmapass',
     tokens: [{
       access: 'auth',
-      token: jwt.sign({_id: userId2, access: 'auth'}, 'supersecret').toString()
+      token: jwt.sign({_id: userId2, access: 'auth'}, process.env.JWT_SECRET).toString()
     }]
   }
 ];
