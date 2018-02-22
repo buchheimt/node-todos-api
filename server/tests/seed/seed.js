@@ -50,7 +50,7 @@ const populateUsers = done => {
       const user1 = new User(usersData[0]).save();
       const user2 = new User(usersData[1]).save();
 
-      Promise.all([user1, user2]);
+      return Promise.all([user1, user2]);
     })
     .then(() => done());
 }
