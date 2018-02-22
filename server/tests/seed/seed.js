@@ -42,7 +42,11 @@ const usersData = [
   {
     _id: userId2,
     email: 'emma@example.com',
-    password: 'emmapass'
+    password: 'emmapass',
+    tokens: [{
+      access: 'auth',
+      token: jwt.sign({_id: userId2, access: 'auth'}, 'supersecret').toString()
+    }]
   }
 ];
 
