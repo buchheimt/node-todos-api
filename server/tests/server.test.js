@@ -304,4 +304,28 @@ describe('User', () => {
         });
     });
   });
+
+  describe('#me/token', () => {
+
+    it('should remove auth token on logout', done => {
+      const token = usersData[0].tokens[0].token;
+
+      request(app)
+        .delete('/users/me/token')
+        .set('x-auth', token)
+        .expect(200)
+        .end((err, res) => {
+          if (err) {
+            return done(err);
+          }
+
+          User.findById(usersData[0]._id)
+            .then(user => {
+              expect(user.tokens.length).to.equal(0);
+              done();
+            })
+            .catch(e => done(e));
+        });
+    });
+  });
 });
