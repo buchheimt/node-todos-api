@@ -19,13 +19,16 @@ describe('Todo', () => {
   
       request(app)
         .post('/todos')
+        .set('x-auth', usersData[0].tokens[0].token)
         .send({text})
         .expect(200)
         .expect(res => {
           expect(res.body.text).to.equal(text);
         })
         .end((err, res) => {
-          if (err) done(err);
+          if (err) {
+            return done(err);
+          }
   
           Todo
             .find({text})
@@ -41,10 +44,13 @@ describe('Todo', () => {
     it('should not create todo with invalid data', done => {
       request(app)
         .post('/todos')
+        .set('x-auth', usersData[0].tokens[0].token)
         .send({})
         .expect(400)
         .end((err, res) => {
-          if (err) done(err);
+          if (err) {
+            done(err);
+          }
   
           Todo
             .find()
@@ -62,9 +68,10 @@ describe('Todo', () => {
     it('should get all todos', done => {
       request(app)
         .get('/todos')
+        .set('x-auth', usersData[0].tokens[0].token)
         .expect(200)
         .expect(res => {
-          expect(res.body.todos.length).to.equal(2);
+          expect(res.body.todos.length).to.equal(1);
         })
         .end(done);
     });
